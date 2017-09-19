@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static "admin/css/base.css" %}" />
+    <meta charset="utf-8"/>
+
+    {% load staticfiles %}
+    <link rel="stylesheet", type="text/css" href="{% static "CSS/mypage.css" %}">
     <title>{% block title %}My Amazing Site{% endblock %}</title>
 </head>
 
@@ -21,4 +24,5 @@
         {% block content %}{% endblock %}
     </div>
 </body>
+
 </html>

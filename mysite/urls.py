@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from mysite import views
+from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
 
-    url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^polls/', include('polls.urls', namespace="polls")),
-    url(r'^books/', include('books.urls', namespace="books")),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^books/', include('books.urls', namespace='books')),
 ]
