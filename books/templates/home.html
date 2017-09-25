@@ -1,16 +1,16 @@
-{% extends "base.html" %}
-{% load staticfiles %}
-{% block content %}
-    <h2>Django Application</h2>
+<!--{% extends "nobase.html" %}-->
+<!--{% load staticfiles %}-->
+<!--{% block content %}-->
+    <!--<h2>Django Application</h2>-->
 
 
 
-    <ul>
-        {% for appname in object_list %}
+    <!--<ul>-->
+        <!--{% for appname in object_list %}-->
 
-        {% with appname|add:":"|add:"index" as urlvar %}
-            <li><a href="{% url urlvar %}">{{ appname }}</a> </li>
-        {% endwith %}
-        {% endfor %}
-    </ul>
-{% endblock content %}
+        <!--{% with appname|add:":"|add:"index" as urlvar %}-->
+            <!--<li><a href="{% url urlvar %}">{{ appname }}</a> </li>-->
+        <!--{% endwith %}-->
+        <!--{% endfor %}-->
+    <!--</ul>-->
+<!--{% endblock content %}-->
