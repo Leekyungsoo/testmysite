@@ -18,6 +18,9 @@ from django.contrib import admin
 from mysite import views
 from bookmark.views import BookmarkLV, BookmarkDV
 from mysite.views import HomeView
+from django.conf import settings
+from django.conf.urls.static import static
+from mysite.views import UserCreateView, UserCreateDoneTV
 
 urlpatterns = [
 
@@ -26,5 +29,11 @@ urlpatterns = [
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^books/', include('books.urls', namespace='books')),
-    url(r'^photo/', include('photo.urls', namespace='photo')),]
-# ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    url(r'^photo/', include('photo.urls', namespace='photo')),
+
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
+
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
